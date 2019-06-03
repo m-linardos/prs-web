@@ -1,0 +1,16 @@
+package com.prs.db;
+
+
+
+import java.util.Optional;
+import com.prs.business.User;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Integer> {
+	
+	Optional<User> findByUserNameAndPassword(String userName, String password);
+	
+	Optional<User> findByUserName(String userName);
+
+}
